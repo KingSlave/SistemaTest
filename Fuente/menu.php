@@ -20,7 +20,8 @@
       <li class="has-dropdown not-click">
         <a href="#">Examenes</a>
         <ul class="dropdown">
-          <li><a href="crearExamen.php">Crear</a></li>
+          <li>        
+          <a href="crearExamen.php">Crear</a></li>
           <li><a href="#">Consultar</a></li>
         </ul>
       </li>
@@ -28,7 +29,7 @@
         <a href="#">Usuarios</a>
         <ul class="dropdown">
           <li><a href="regUsuario.php">Registrar</a></li>
-          <li><a href="#">Consultar</a></li>
+          <li><a href="conUsuario.php">Consultar</a></li>
         </ul>
       </li>
     </ul>
