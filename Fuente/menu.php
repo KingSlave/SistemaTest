@@ -6,7 +6,7 @@
 <h1>Sistema de examenes en linea</h1>	
 </div>
 </div>
-<div class="">
+
   <nav class="top-bar" data-topbar data-options="back_text: Regresar">
     <ul class="title-area">
       <li class="name">
@@ -22,7 +22,7 @@
         <ul class="dropdown">
           <li>        
           <a href="crearExamen.php">Crear</a></li>
-          <li><a href="#">Consultar</a></li>
+          <li><a href="conExamen.php">Consultar</a></li>
         </ul>
       </li>
       <li class="has-dropdown not-click">
@@ -35,9 +35,9 @@
     </ul>
     <!-- Left Nav Section -->
     <ul class="left">
-      <li class="active"><a href="#">Iniciar sesion</a></li>
+      <li class="active"><a href="login.php">Iniciar sesion</a></li>
     </ul>
   </section>
 </nav>
-</div>
+
 

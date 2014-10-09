@@ -7,7 +7,7 @@
 		<?php
     include('menu.php');
     ?>
-<i class="fi-heart style2"></i>
+
 
 
 <?php

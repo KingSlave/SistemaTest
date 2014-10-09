@@ -12,7 +12,7 @@ include('menu.php');
 
 <div class="row">
 <div class="large-6 large-centered columns">
-<h3>Registro de nuevo usuario</h3>
+<h3>Inicio de sesion</h3>
 </div>
 </div>
 <div class="row">
@@ -20,15 +20,18 @@ include('menu.php');
 	<div class="panel radius">
 	<form>
 		<label>
-			Nick del usuario:
+			Usuario:
 			<input type="text" id="nick">			
 		</label>
 		<label>
 			Password:
 			<input type="password" id="nick">
-		</label>		
-		<button class="small round button">Guardar</button>		
-		<a href="index.php" class="small round button secondary"> Cancelar</a>			
+		</label>	
+		<div  class="row">		
+		<div class="large-8 large-centered columns"> 		
+		<button class="small round button expand">Entrar</button>					
+		</div>
+		</div>	
 	</form>
 	</div>
 </div>	
