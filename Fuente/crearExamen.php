@@ -13,7 +13,8 @@ include("menu.php");
 <div class="large-6 large-centered columns">
 <h3>Creacion de nuevo examen</h3>
 <div class="panel">
-	<form>
+	<form method="post" action="procesar/insertar.php">
+	<input type="hidden" name="tabla" value="examenes">
 	<label>Numero de examen: 1</label>
 		<label>Numero de unidad:			
 			<input type="number" name="" value="" placeholder="">						

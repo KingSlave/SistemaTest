@@ -18,7 +18,7 @@ include('menu.php');
 <div class="row">
 <div class="large-6 large-centered columns">
 	<div class="panel radius">
-	<form>
+	<form method="post">
 		<label>
 			Usuario:
 			<input type="text" id="nick">			
@@ -36,8 +36,6 @@ include('menu.php');
 	</div>
 </div>	
 </div>
-
-
 <?php
 include('tema.php');
 ?>
