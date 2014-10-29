@@ -25,20 +25,28 @@ include('menu.php');
 	</tr>
 </thead>
 <tbody>
-	<tr>
-		<td>Pepe</td>
-		<td>
-		<img class="imagen" src="img/usuario_Borrar.png">
-		<img class="imagen" src="img/usuario_editar.png">
-		</td>	
-	</tr>
-	<tr>
-		<td>Maria</td>
-		<td>
-		<img class="imagen" src="img/usuario_Borrar.png">
-		<img class="imagen" src="img/usuario_editar.png">
-		</td>	
-	</tr>
+<?php 
+
+require_once 'procesar/consultar.php';
+$con = new consultar();
+$con->consultarUsuarios();
+ ?>
+
+<!--		<tr>
+			<td>Pepe</td>
+			<td>
+			<img class="imagen" src="img/usuario_Borrar.png">
+			<img class="imagen" src="img/usuario_editar.png">
+			</td>	
+		</tr>
+		<tr>
+			<td>Maria</td>
+			<td>
+			<img class="imagen" src="img/usuario_Borrar.png">
+			<img class="imagen" src="img/usuario_editar.png">
+			</td>	
+		</tr>
+		-->
 </tbody>
 </table>
 
