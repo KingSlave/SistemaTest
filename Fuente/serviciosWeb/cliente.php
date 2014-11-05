@@ -1,7 +1,10 @@
 <?php
     require_once "../lib/nusoap.php";
-    $cliente = new nusoap_client("http://localhost:8080/localtest/serviciosWeb/servicio.php");
-      
+    
+    //$cliente = new nusoap_client("http://localhost:8080/localtest/serviciosWeb/servicio.php");
+    
+    $cliente = new nusoap_client("servicio.wsdl",true);
+    
     $error = $cliente->getError();
     if ($error) {
         echo "<h2>Error:</h2>" . $error;
