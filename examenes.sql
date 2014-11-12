@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2014-10-22 22:37:55
+Date: 2014-11-12 14:38:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,22 +32,6 @@ CREATE TABLE `examenes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of examenes
--- ----------------------------
-INSERT INTO `examenes` VALUES ('1', 'admin', '1', 'Abierto', '2014-10-09 12:34:21', '2014-10-09 12:34:21');
-INSERT INTO `examenes` VALUES ('2', 'admin', '1', 'Abierto', '2014-10-09 12:34:21', '2014-10-09 12:34:21');
-INSERT INTO `examenes` VALUES ('3', 'admin', '0', 'Abierto', '2014-10-09 15:35:40', '2014-10-09 22:57:25');
-INSERT INTO `examenes` VALUES ('4', 'admin', '0', 'Abierto', '2014-10-09 15:35:40', '2014-10-16 11:42:18');
-INSERT INTO `examenes` VALUES ('5', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2010-10-10 00:00:00');
-INSERT INTO `examenes` VALUES ('6', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2010-10-10 00:00:00');
-INSERT INTO `examenes` VALUES ('7', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2010-10-10 00:00:00');
-INSERT INTO `examenes` VALUES ('8', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2010-10-10 00:00:00');
-INSERT INTO `examenes` VALUES ('9', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2010-10-10 00:00:00');
-INSERT INTO `examenes` VALUES ('10', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2011-11-11 00:00:00');
-INSERT INTO `examenes` VALUES ('11', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2011-11-11 00:00:00');
-INSERT INTO `examenes` VALUES ('12', 'admin', '1', 'Abierto', '2010-10-10 00:00:00', '2011-11-11 00:00:00');
-
--- ----------------------------
 -- Table structure for preguntas
 -- ----------------------------
 DROP TABLE IF EXISTS `preguntas`;
@@ -60,10 +44,6 @@ CREATE TABLE `preguntas` (
   KEY `FK_REFERENCE_5` (`ID`),
   CONSTRAINT `FK_REFERENCE_5` FOREIGN KEY (`ID`) REFERENCES `examenes` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of preguntas
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for privilegios
@@ -81,10 +61,6 @@ CREATE TABLE `privilegios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of privilegios
--- ----------------------------
-
--- ----------------------------
 -- Table structure for respuestas
 -- ----------------------------
 DROP TABLE IF EXISTS `respuestas`;
@@ -100,20 +76,18 @@ CREATE TABLE `respuestas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of respuestas
--- ----------------------------
-
--- ----------------------------
 -- Table structure for usuarios
 -- ----------------------------
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `IDNICK` varchar(20) NOT NULL,
   `PASSWORD` varchar(500) DEFAULT NULL,
+  `Foto` varchar(200) NOT NULL,
   PRIMARY KEY (`IDNICK`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of usuarios
+-- View structure for examenesabiertos
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('admin', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441');
+DROP VIEW IF EXISTS `examenesabiertos`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `examenesabiertos` AS  ;

@@ -21,6 +21,7 @@ include('menu.php');
 <thead>
 	<tr>
 		<th>Nick</th>
+		<th>Foto</th>
 		<th>Operaciones</th>
 	</tr>
 </thead>

@@ -18,7 +18,7 @@ include('menu.php');
 <div class="row">
 <div class="large-6 large-centered columns">
 	<div class="panel radius">
-	<form method="post" action="procesar/insertar.php">
+	<form method="post" enctype="multipart/form-data" action="procesar/insertar.php">
 	<input type="hidden" name="tabla" value="usuarios">
 		<label>
 			Nick del usuario:
@@ -27,6 +27,10 @@ include('menu.php');
 		<label>
 			Password:
 			<input type="password" id="nick" name="pass">
+		</label>
+		<label>
+			Foto: 
+			<input type="file" name="foto">
 		</label>		
 		<button class="small round button">Guardar</button>		
 		<a href="index.php" class="small round button secondary"> Cancelar</a>			
