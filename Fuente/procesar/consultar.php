@@ -2,6 +2,8 @@
 
 class consultar{
 
+
+
 public function consultarUsuarios(){
 $conexion =  mysqli_connect("localhost", "root", "binario", "examenes");
 $consulta = mysqli_query($conexion, "select * from usuarios");
@@ -22,8 +24,24 @@ mysqli_close($conexion);
 mysqli_free_result($consulta);
 }
 
+public function consultarLogin($nick,$pass){
+$res = false;
+$conexion =  mysqli_connect("localhost", "root", "binario", "examenes");
+$comandoSQL = sprintf("select * from usuarios where idnick=%s and password=%s", 
+mysqli_real_escape_string($nick),mysqli_real_escape_string($pass)
+	);
+$consulta = mysqli_query($conexion, $comandoSQL);
+
+if($fila = mysqli_fetch_array($consulta)){
+$res = true;
 }
 
+mysqli_close($conexion);
+mysqli_free_result($consulta);
 
+return $res;
+}
+
+}
 
 ?>
