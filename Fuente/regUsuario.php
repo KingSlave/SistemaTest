@@ -30,7 +30,7 @@ include('menu.php');
 		</label>
 		<label>
 			Foto: 
-			<input type="file" name="foto">
+			<input type="file" name="foto" accept="image/*">
 		</label>		
 		<button class="small round button">Guardar</button>		
 		<a href="index.php" class="small round button secondary"> Cancelar</a>			
