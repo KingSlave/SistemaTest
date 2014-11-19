@@ -1,11 +1,11 @@
 <?php 
-
+require_once 'config.php';
 class consultar{
 
 
 
 public function consultarUsuarios(){
-$conexion =  mysqli_connect("localhost", "root", "binario", "examenes");
+$conexion =  mysqli_connect(config::$servidor, config::$usuario, config::$password, config::$baseDeDatos);
 $consulta = mysqli_query($conexion, "select * from usuarios");
 
 while($fila = mysqli_fetch_array($consulta)){
@@ -26,7 +26,7 @@ mysqli_free_result($consulta);
 
 public function consultarLogin($nick,$pass){
 $res = false;
-$conexion =  mysqli_connect("localhost", "root", "binario", "examenes");
+$conexion =  mysqli_connect(config::$servidor, config::$usuario, config::$password, config::$baseDeDatos);
 $comandoSQL = sprintf("select * from usuarios where idnick=%s and password=%s", 
 mysqli_real_escape_string($nick),mysqli_real_escape_string($pass)
 	);

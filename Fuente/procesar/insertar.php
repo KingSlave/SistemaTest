@@ -68,7 +68,7 @@ die('La operacion no puede ser realizada: ERROR 0xT');
 
 require_once 'config.php';
 
-$conexion = mysqli_connect($servidor, $usuario, $password, $baseDeDatos );
+$conexion = mysqli_connect(config::$servidor, config::$usuario, config::$password, config::$baseDeDatos );
 $resultadoRetorno = 1;
 $res  = mysqli_query($conexion, $sql) or $resultadoRetorno=0;
 
