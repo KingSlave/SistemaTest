@@ -8,6 +8,7 @@
 <body>
 <?php
 include('menu.php');
+session_start();
 ?>	
 
 <div class="row">
@@ -21,11 +22,11 @@ include('menu.php');
 	<form method="post">
 		<label>
 			Usuario:
-			<input type="text" id="nick">			
+			<input type="text" id="nick" name="nick">			
 		</label>
 		<label>
 			Password:
-			<input type="password" id="nick">
+			<input type="password" id="password" name="password">
 		</label>	
 		<div  class="row">		
 		<div class="large-8 large-centered columns"> 		
@@ -33,6 +34,23 @@ include('menu.php');
 		</div>
 		</div>	
 	</form>
+<?php 
+if(isset($_POST['nick']) && isset($_POST['password'])){
+require_once 'procesar/consultar.php';
+$c =  new consultar();
+
+$resultado = $c->consultarLogin($_POST['nick'],$_POST['password']);
+
+if($resultado){
+$_SESSION['admitido']='si';
+$_SESSION['nick'] = $_POST['nick'];
+header("Location: index.php");
+}else{
+$_SESSION['admitido']='no';
+}
+}
+ ?>
+
 	</div>
 </div>	
 </div>

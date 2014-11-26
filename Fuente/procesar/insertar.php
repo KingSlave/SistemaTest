@@ -34,19 +34,19 @@ $extensionArchivo  =  substr($_FILES['foto']['name'], strrpos($_FILES['foto']['n
 //-------------------------------------TABLA EXAMENES ------------------------------------	
 	if($tabla == 'examenes'){
 //if(FALSE)
-if(isset($_POST['Id']) && isset($_POST['Nick'])
-	&& isset($_POST['Unidad']) && isset($_POST['Estado'])
-	&& isset($_POST['FechaInicio']) && isset($_POST['FechaCierre']))
+
+
+if(isset($_POST['Unidad']) && isset($_POST['Estado']) && isset($_POST['fInicio']) && isset($_POST['fCierre']))
 {
-	$id= $_POST['Id'];
-	$nick= $_POST['Nick'];
+	session_start();	
+	$nick= $_SESSION['nick'];
 	$unidad= $_POST['Unidad'];
 	$estado= $_POST['Estado'];
-	$fechaInicio= $_POST['FechaInicio'];
-	$fechaCierre= $_POST['FechaCierre'];	
-$sql = $sql."'$id','$nick',$unidad,'$estado','$fechaInicio','$fechaCierre')";
+	$fechaInicio= $_POST['fInicio'];
+	$fechaCierre= $_POST['fCierre'];	
+$sql = $sql."0,'$nick',$unidad,'$estado','$fechaInicio','$fechaCierre')";
 
-$paginaRetorno = 'regExamenes.php';
+$paginaRetorno = 'crearExamen.php';
 }else{
 	die('Error en datos: ERROR 0xE');
 }

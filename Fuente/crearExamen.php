@@ -17,10 +17,10 @@ include("menu.php");
 	<input type="hidden" name="tabla" value="examenes">
 	<label>Numero de examen: 1</label>
 		<label>Numero de unidad:			
-			<input type="number" name="" value="" placeholder="">						
+			<input type="number" name="Unidad" value="" placeholder="">						
 			</label>
 		<label>Estado actual del examen: 		    		
-		      <select id="estado" name="estado">
+		      <select id="estado" name="Estado">
 		      	<option value="Abierto">Abierto</option>
 		      	<option value="Cerrado">Cerrado</option>}		      	
 		      </select>		      
@@ -35,6 +35,25 @@ include("menu.php");
 			</label>	
 		<input type="submit" class="button round" value="Guardar">
 	</form>
+	<?php
+    if(isset($_GET['res'])){
+	$resultado = $_GET['res'];	
+	if($resultado==1){
+	?>
+	<div data-alert class="alert-box success round">
+  	 El examen se ha creado correctamente
+	</div>
+<?php 
+}
+else{
+?>
+	<div data-alert class="alert-box alert round">
+  	 No se ha podido crear el examen 
+	</div>
+<?php
+}
+	}
+ ?>
 	</div>
 </div>
 </div>

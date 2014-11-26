@@ -27,10 +27,10 @@ mysqli_free_result($consulta);
 public function consultarLogin($nick,$pass){
 $res = false;
 $conexion =  mysqli_connect(config::$servidor, config::$usuario, config::$password, config::$baseDeDatos);
-$comandoSQL = sprintf("select * from usuarios where idnick=%s and password=%s", 
-mysqli_real_escape_string($nick),mysqli_real_escape_string($pass)
+$comandoSQL = sprintf("select * from usuarios where idnick='%s' and password=password('%s')", 
+mysqli_real_escape_string($conexion,$nick),mysqli_real_escape_string($conexion,$pass)
 	);
-$consulta = mysqli_query($conexion, $comandoSQL);
+$consulta = mysqli_query($conexion, $comandoSQL) or die("ERROR:  ".mysqli_error($conexion));
 
 if($fila = mysqli_fetch_array($consulta)){
 $res = true;
