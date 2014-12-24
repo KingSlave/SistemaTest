@@ -7,8 +7,13 @@
 </head>
 <body>
 <?php
-include('menu.php');
-session_start();
+include('menuLogin.php');
+if(isset($_GET['res']) && $_GET['res']==2){
+	session_destroy();
+}
+
+if(isset($_SESSION['admitido']) && $_SESSION['admitido']=='si')
+header("Location: index.php");
 ?>	
 
 <div class="row">
@@ -48,6 +53,7 @@ header("Location: index.php");
 }else{
 $_SESSION['admitido']='no';
 }
+
 }
  ?>
 

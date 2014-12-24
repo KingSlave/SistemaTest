@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['admitido']) && $_SESSION['admitido']!='si'){
+header("Location: login.php");
+die("Login");
+}
+?>
 <div class="row">
 <div class="large-2 large-centered columns">
 <img src="img/logo.png" alt="Logotipo">  
@@ -35,7 +42,7 @@
     </ul>
     <!-- Left Nav Section -->
     <ul class="left">
-      <li class="active"><a href="login.php">Iniciar sesion</a></li>
+      <li class="active"><a href="login.php?res=2">Cerrar sesion</a></li>
     </ul>
   </section>
 </nav>
